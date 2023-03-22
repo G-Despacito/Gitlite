@@ -1,19 +1,19 @@
-package gitlet;
+package gitlite;
 
-/** General exception indicating a Gitlet error.  For fatal errors, the
+/** General exception indicating a Gitlite error.  For fatal errors, the
  *  result of .getMessage() is the error message to be printed.
  *  @author P. N. Hilfinger
  */
-class GitletException extends RuntimeException {
+class GitliteException extends RuntimeException {
 
 
-    /** A GitletException with no message. */
-    GitletException() {
+    /** A GitliteException with no message. */
+    GitliteException() {
         super();
     }
 
-    /** A GitletException MSG as its message. */
-    GitletException(String msg) {
+    /** A GitliteException MSG as its message. */
+    GitliteException(String msg) {
         super(msg);
     }
 

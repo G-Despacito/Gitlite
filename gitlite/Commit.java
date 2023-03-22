@@ -1,15 +1,15 @@
-package gitlet;
+package gitlite;
 
 import java.io.*;
 import java.util.*;
 import java.text.SimpleDateFormat;
 
-import static gitlet.Utils.*;
+import static gitlite.Utils.*;
 
-/** Represents a gitlet commit object.
+/** Represents a gitlite commit object.
  *  does at a high level.
  *
- *  @author Xinyi Zhang
+ *  @author G-Despacito
  */
 public class Commit implements Serializable {
 

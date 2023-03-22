@@ -1,17 +1,22 @@
-package gitlet;
+package gitlite;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
-import static gitlet.Utils.*;
+import static gitlite.Utils.*;
+
+/** Implemented Git commands.
+ *
+ *  @author G-Despacito
+ */
 
 public class Bloop {
     /** Magic number. **/
     private static final int SHA1LEN = 40;
 
-    /** Creates a new Gitlet version-control system in the current directory.
+    /** Creates a new Gitlite version-control system in the current directory.
      * This system will automatically start with one commit: a commit that contains
      * no files and has the commit message initial commit (just like that, with no
      * punctuation). It will have a single branch: main, which initially points to
@@ -19,7 +24,7 @@ public class Bloop {
      * this initial commit will be 00:00:00 UTC, Thursday, 1 January 1970 in
      * whatever format you choose for dates (this is called “The (Unix) Epoch”,
      * represented internally by the time 0.) Since the initial commit in all
-     * repositories created by Gitlet will have exactly the same content, it
+     * repositories created by Gitlite will have exactly the same content, it
      * follows that all repositories will automatically share this commit (they
      * will all have the same UID) and all commits in all repositories will trace
      * back to it. **/
@@ -29,11 +34,11 @@ public class Bloop {
         // Failure cases: If the file does not exist, print the error message
         // File does not exist. and exit without changing anything.
         if (Repository.GITLET_DIR.exists()) {
-            exitWithError("A Gitlet version-control system already exists in "
+            exitWithError("A Gitlite version-control system already exists in "
                     + "the current directory.");
         }
 
-        // Creates a new Gitlet version-control system in the current directory.
+        // Creates a new Gitlite version-control system in the current directory.
         Repository repo = new Repository();
 
         Commit initial = new Commit("initial commit");
@@ -50,11 +55,11 @@ public class Bloop {
      * description of the commit command). For this reason, adding a file is also
      * called staging the file for addition. Staging an already-staged file overwrites
      * the previous entry in the staging area with the new contents. The staging area
-     * should be somewhere in .gitlet. If the current working version of the file is
+     * should be somewhere in .gitlite. If the current working version of the file is
      * identical to the version in the current commit, do not stage it to be added,
      * and remove it from the staging area if it is already there (as can happen when
      * a file is changed, added, and then changed back to it’s original version). The
-     * file will no longer be staged for removal (see gitlet rm), if it was at the
+     * file will no longer be staged for removal (see gitlite rm), if it was at the
      * time of the command. **/
     public static void add(String[] args) {
         validateNumArgs("add", args, 2);
@@ -116,7 +121,7 @@ public class Bloop {
         // Please enter a commit message. It is not a failure for tracked
         // files to be missing from the working directory or changed in
         // the working directory. Just ignore everything outside the
-        // .gitlet directory entirely.
+        // .gitlite directory entirely.
         if (args.length > 2) {
             exitWithError("Incorrect operands.");
         }
@@ -172,7 +177,7 @@ public class Bloop {
         // Please enter a commit message. It is not a failure for tracked
         // files to be missing from the working directory or changed in
         // the working directory. Just ignore everything outside the
-        // .gitlet directory entirely.
+        // .gitlite directory entirely.
         if (args.length > 3) {
             exitWithError("Incorrect operands.");
         }
@@ -286,7 +291,7 @@ public class Bloop {
 
 
     /** Like log, except displays information about all commits ever made. The order
-     *  of the commits does not matter. Hint: there is a useful method in gitlet.
+     *  of the commits does not matter. Hint: there is a useful method in gitlite.
      *  Utils that will help you iterate over files within a directory. **/
     public static void globalLog(String[] args) {
         validateNumArgs("globalLog", args, 1);

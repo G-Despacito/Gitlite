@@ -1,13 +1,13 @@
-package gitlet;
+package gitlite;
 
 import java.io.File;
 
-import static gitlet.Utils.*;
+import static gitlite.Utils.*;
 
 
-/** Represents a gitlet repository.
+/** Represents a gitlite repository.
  *
- *  @author Xinyi Zhang
+ *  @author G-Despacito
  */
 public class Repository {
     /**
@@ -19,12 +19,12 @@ public class Repository {
 
     /** The current working directory. */
     public static final File CWD = new File(System.getProperty("user.dir"));
-    /** The .gitlet directory. */
-    public static final File GITLET_DIR = join(CWD, ".gitlet");
+    /** The .gitlite directory. */
+    public static final File GITLET_DIR = join(CWD, ".gitlite");
 
-    /** The .gitlet.objects directory. **/
+    /** The .gitlite.objects directory. **/
     public static final File COMMITS_DIR = join(GITLET_DIR, "commits");
-    /** The .gitlet.refs directory. **/
+    /** The .gitlite.refs directory. **/
     public static final File BLOBS_DIR = join(GITLET_DIR, "blobs");
     /** The branch directory, stores the sha1 files of all the branches heads. **/
     public static final File BRANCH_DIR = join(GITLET_DIR, "branch");

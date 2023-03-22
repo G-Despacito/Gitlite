@@ -1,4 +1,4 @@
-package gitlet;
+package gitlite;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -68,10 +68,10 @@ class Utils {
     /** Deletes FILE if it exists and is not a directory.  Returns true
      *  if FILE was deleted, and false otherwise.  Refuses to delete FILE
      *  and throws IllegalArgumentException unless the directory designated by
-     *  FILE also contains a directory named .gitlet. */
+     *  FILE also contains a directory named .gitlite. */
     static boolean restrictedDelete(File file) {
-        if (!(new File(file.getParentFile(), ".gitlet")).isDirectory()) {
-            throw new IllegalArgumentException("not .gitlet working directory");
+        if (!(new File(file.getParentFile(), ".gitlite")).isDirectory()) {
+            throw new IllegalArgumentException("not .gitlite working directory");
         }
         if (!file.isDirectory()) {
             return file.delete();
@@ -83,7 +83,7 @@ class Utils {
     /** Deletes the file named FILE if it exists and is not a directory.
      *  Returns true if FILE was deleted, and false otherwise.  Refuses
      *  to delete FILE and throws IllegalArgumentException unless the
-     *  directory designated by FILE also contains a directory named .gitlet. */
+     *  directory designated by FILE also contains a directory named .gitlite. */
     static boolean restrictedDelete(String file) {
         return restrictedDelete(new File(file));
     }
@@ -224,10 +224,10 @@ class Utils {
 
     /* MESSAGES AND ERROR REPORTING */
 
-    /** Return a GitletException whose message is composed from MSG and ARGS as
+    /** Return a GitliteException whose message is composed from MSG and ARGS as
      *  for the String.format method. */
-    static GitletException error(String msg, Object... args) {
-        return new GitletException(String.format(msg, args));
+    static GitliteException error(String msg, Object... args) {
+        return new GitliteException(String.format(msg, args));
     }
 
     /** Print a message composed from MSG and ARGS as for the String.format
@@ -240,7 +240,7 @@ class Utils {
     /**
      * Prints out MESSAGE and exits with error code 0.
      * Note:
-     *     The functionality for erroring/exit codes is different within Gitlet
+     *     The functionality for erroring/exit codes is different within Gitlite
      *     so DO NOT use this as a reference.
      *     Refer to the spec for more information.
      * @param message message to print
@@ -261,12 +261,12 @@ class Utils {
     }
 
     /** If a user inputs a command that requires being in an initialized
-     * Gitlet working directory (i.e., one containing a .gitlet subdirectory),
+     * Gitlite working directory (i.e., one containing a .gitlite subdirectory),
      * but is not in such a directory, print the message Not in an initialized
-     * Gitlet directory. **/
+     * Gitlite directory. **/
     static void validateRepoExists(String[] args) {
         if (!Repository.GITLET_DIR.exists()) {
-            exitWithError("Not in an initialized Gitlet directory.");
+            exitWithError("Not in an initialized Gitlite directory.");
         }
     }
 
