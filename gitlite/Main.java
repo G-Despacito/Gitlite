@@ -3,7 +3,7 @@ package gitlite;
 import static gitlite.Utils.*;
 
 /** Driver class for Gitlite, a subset of the Git version-control system.
- *  @author G-Despacito
+ *  @author Xinyi Zhang
  */
 public class Main {
 

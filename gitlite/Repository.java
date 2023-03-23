@@ -7,7 +7,7 @@ import static gitlite.Utils.*;
 
 /** Represents a gitlite repository.
  *
- *  @author G-Despacito
+ *  @author Xinyi Zhang
  */
 public class Repository {
     /**

@@ -7,11 +7,6 @@ import java.util.List;
 
 import static gitlite.Utils.*;
 
-/** Implemented Git commands.
- *
- *  @author G-Despacito
- */
-
 public class Bloop {
     /** Magic number. **/
     private static final int SHA1LEN = 40;

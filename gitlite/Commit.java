@@ -9,7 +9,7 @@ import static gitlite.Utils.*;
 /** Represents a gitlite commit object.
  *  does at a high level.
  *
- *  @author G-Despacito
+ *  @author Xinyi Zhang
  */
 public class Commit implements Serializable {
 

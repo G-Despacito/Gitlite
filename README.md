@@ -6,7 +6,7 @@ This project built a Git version control system in Java from scratch.
 
 ### init
 `java gitlite.Main init`  
-Creates a new Gitlet version-control system in the current directory.
+Creates a new Gitlite version-control system in the current directory.
 ### add
 `java gitlite.Main add [file name]`  
 Adds a copy of the file as it currently exists to the staging area.
@@ -68,4 +68,4 @@ Checks out all the files tracked by the given commit. Removes tracked files that
 Merges files from the given branch into the current branch. For each file, there are several possible cases, consider if it exists in current branch, merge branch, and the split point. 
 
 # Reference
-[Gitlet](https://sp21.datastructur.es/materials/proj/proj2/proj2)
+[Gitlite](https://sp21.datastructur.es/materials/proj/proj2/proj2)
