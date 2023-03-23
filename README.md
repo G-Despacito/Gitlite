@@ -2,7 +2,17 @@
 
 This project built a Git version control system in Java from scratch. 
 
-# Commands 
+# Prerequisite
+- `IntelliJ IDEA Community Edition 2022.1.3  `
+- `JDK-17.0.3.7-hotspot`
+
+# Setup
+Download `hamcrest-core-1.3.jar` and `junit-4.13.2.jar` in `library` and add them to IntelliJ project library. 
+> **Details:** In IntelliJ, `File` -> `Project Structure` -> `Project Settings` -> `Libraries` -> `New Project Library` -> Add and finish.
+
+Then you can use it like the real git with the commands below.
+
+# Supported Commands 
 
 ### init
 `java gitlite.Main init`  
